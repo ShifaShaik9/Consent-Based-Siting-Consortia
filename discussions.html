@@ -3,19 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Discussions</title>
     <style>
         body {
     margin: 0;
-    font-family: 'Roboto Slab', serif;
+    padding: 0;
 }
-        
+
 .logo {
     width: 156px; 
     height: 130px; 
-    padding-left: 3.5%;
+    padding-left: 2%;
     padding-bottom: 1%;
    
+}
+.banner{
+    width: 1220px; 
+    height: 150px; 
+    padding-left: 15px;
+    padding-top: 1px;
 }
 
 nav {
@@ -31,7 +38,7 @@ nav a {
     padding: 28px 16px;
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 23px;
 }
 
 nav a:hover, nav a:active {
@@ -44,9 +51,10 @@ nav a:hover, nav a:active {
     color: yellow;
   }
 
- .chat-box {
+  .chat-box {
             width: 400px;
             margin: 25px auto;
+            float: right;
             background-color: #0f3326;
             color: cream;
             border: 2px solid #ccc;
@@ -75,16 +83,16 @@ nav a:hover, nav a:active {
         .student-message {
             background-color: #ddd;
             border-radius: 10px;
-            padding: 15px;
+            padding: 18px;
             max-width: 80%;
             float: left;
         }
 
         .message-input {
-            width: calc(100% - 10px);
+            width: calc(100% - 5px);
             padding: 25px;
             box-sizing: border-box;
-            border-radius: 100pk;
+            border-radius: 100px;
             border-bottom: 2px solid #ccc;
             background-color: whitesmoke;
             color: cream;
@@ -102,22 +110,23 @@ nav a:hover, nav a:active {
             cursor: pointer;
         }
 
-
     </style>
 </head>
-<body> 
-<br>
+<body>   
     <a href="website.html"> <img src="logo.png" class="logo"></a>
+    <a href="#"><img src="banner.jpg" class="banner"></a>
 <nav><b>
+    <a href="#" class="fa fas fa-home" style="font-size: 25px;"></a>
     <a href="project goals.html">Project Goal and Mission</a>
     <a href="Ask an expert.html">Ask an Expert</a>
     <a href="project team.html">Project Team</a>
     <a href="discussions.html" class="active">Discussions</a>
     <a href="helpful link.html">Helpful Link</a>
     <a href="education.html">Education</a>
-    <a href="events.html">Events</a></b>
+    <a href="Events.html">Events</a></b>
 </nav>
-    <div class="chat-box">
+
+<div class="chat-box">
     <div class="chat-header">Normal Conversations</div>
     <div class="chat-body" id="chatBody">
         <!-- Messages will appear here -->
