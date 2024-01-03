@@ -8,16 +8,22 @@ body {
     height: 100vh; 
     background-color: #0f3326;
     position: fixed;
-    top: 248px;
+    top: 238px;
     bottom: 300px;
 }
 
 .logo {
     width: 156px; 
     height: 130px; 
-    padding-left: 3.5%;
+    padding-left: 2%;
     padding-bottom: 1%;
    
+}
+.banner{
+    width: 1235px; 
+    height: 150px; 
+    padding-left: 1%;
+    padding-top: 1px;
 }
 
 nav {
@@ -33,7 +39,7 @@ nav a {
     padding: 28px 16px;
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 23px;
 }
 
 nav a:hover, nav a:active {
