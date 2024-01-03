@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ask an Expert</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Ask a Question</title>
     <style>
         body {
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
+            margin: 0;
+            padding: 0;
 }
-
 .logo {
     width: 156px; 
     height: 130px; 
-    padding-left: 3.5%;
+    padding-left: 2%;
     padding-bottom: 1%;
    
+}
+.banner{
+    width: 1222px; 
+    height: 150px; 
+    padding-left: 1.0%;
+    padding-top: 1px;
 }
 
 nav {
@@ -31,7 +37,7 @@ nav a {
     padding: 28px 16px;
     text-decoration: none;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 24px;
+    font-size: 23px;
 }
 
 nav a:hover, nav a:active {
@@ -43,6 +49,7 @@ nav a:hover, nav a:active {
     background-color: transparent;
     color: yellow;
   }
+
   .chat-box {
             width: 400px;
             margin: 20px auto;
@@ -77,7 +84,7 @@ nav a:hover, nav a:active {
             background-color: #4CAF50;
             color: #fff;
             border-radius: 30px;
-            padding: 20px;
+            padding: 15px;
             max-width: 80%;
             float: right;
         }
@@ -91,7 +98,7 @@ nav a:hover, nav a:active {
         }
 
         .message-input {
-            width: calc(100% - 10px);
+            width: calc(100% - 8px);
             padding: 25px;
             box-sizing: border-box;
             border-radius: 100px;
@@ -112,19 +119,20 @@ nav a:hover, nav a:active {
 
     </style>
 </head>
-<body>
-<br>
+<body> 
     <a href="website.html"> <img src="logo.png" class="logo"></a>
+    <a href="#"><img src="banner.jpg" class="banner"></a>
 <nav><b>
+    <a href="#" class="fa fas fa-home" style="font-size: 25px;"></a>
     <a href="project goals.html">Project Goal and Mission</a>
     <a href="Ask an expert.html" class="active">Ask an Expert</a>
     <a href="project team.html">Project Team</a>
     <a href="discussions.html">Discussions</a>
     <a href="helpful link.html">Helpful Link</a>
     <a href="education.html">Education</a>
-    <a href="events.html">Events</a></b>
-    
+    <a href="Events.html">Events</a></b>
 </nav>
+
 <div class="chat-box">
     <div class="chat-header">Expert-Student Chat</div>
     <div class="chat-body" id="chatBody">
@@ -175,6 +183,6 @@ nav a:hover, nav a:active {
         // Scroll to the bottom of the chat
         chatBody.scrollTop = chatBody.scrollHeight;
     }
-</script>
+</script> 
 </body>
 </html>
