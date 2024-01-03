@@ -1,11 +1,12 @@
-*{
+* {
     margin: 0;
-    padding: 0;  
+    padding: 0;
 }
-body{
+
+body {
     background-color: #F2F3F4;
 }
-.heading{
+.heading {
     text-align: center;
     color: #17a2b8;
     font-size: 18px;
@@ -13,18 +14,20 @@ body{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-style: bold;
 }
-.image{
+
+.image {
     margin-top: 0px;
     margin-left: 40px;
 }
-.info h3{
-  padding-top: 2px;
-  padding-left: 38%;
-  color: lightgreen;
+.info h3 {
+    padding-top: 2px;
+    padding-left: 38%;
+    color: lightgreen;
 }
-.infoo h3{
+
+.infoo h3 {
     padding-top: 2px;
     padding-left: 38%;
     color: #17a2b8;
-  }
+}
 
