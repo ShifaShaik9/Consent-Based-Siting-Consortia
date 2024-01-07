@@ -1,15 +1,6 @@
-body {
+ body {
     margin: 0;
     font-family: 'Roboto Slab', serif;
-}
-
-.green-background {
-    width: 100%;
-    height: 100vh; 
-    background-color: #0f3326;
-    position: fixed;
-    top: 238px;
-    bottom: 300px;
 }
 
 .logo {
@@ -20,7 +11,7 @@ body {
    
 }
 .banner{
-    width: 1235px; 
+    width: 1220px; 
     height: 150px; 
     padding-left: 1%;
     padding-top: 1px;
@@ -52,3 +43,44 @@ nav a:hover, nav a:active {
     color: yellow;
   }
 
+  .login-container {
+ display: flex;
+justify-content: space-around;
+margin-top: 100px;
+}
+
+.login-box {
+ border: 5px solid #ddd;
+ background-color: gainsboro;
+ padding: 10px;
+ width: 350px;
+ height: 370px;
+}
+
+.login-box h2 {
+ text-align: center;
+
+}
+
+.login-box label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+.login-box input[type="text"], .login-box input[type="password"] {
+ width: 90%;
+ padding: 10px;
+ margin-bottom: 20px;
+}
+
+.login-box input[type="submit"] {
+ width: 97%;
+ padding: 10px;
+ background-color: #154734;
+ color: white;
+ border: none;
+ cursor: pointer;
+}
+.login-box h4{
+    text-align: center;
+}
