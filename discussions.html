@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="discussions.js"></script>
     <title>Discussions</title>
     <style>
         body {
@@ -50,73 +51,59 @@ nav a:hover, nav a:active {
     background-color: transparent;
     color: yellow;
   }
+  .heading h3{
+    font-size: 40px;
+    text-align: left;
+    margin-left: 80px;
+    color: #154734;
+  }
+  #chat-container {
+    max-width: 1300px;
+    margin-top: 5px;
+    margin-left: 25px;
+    padding: 50px;
+    border-radius: 5px;
+    overflow-y: auto;
+}
 
-  .chat-box {
-            width: 400px;
-            margin: 25px auto;
-            float: right;
-            background-color: #0f3326;
-            color: cream;
-            border: 2px solid #ccc;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+#message-history {
+    margin-bottom: 10px;
+}
 
-        .chat-header {
-            background-color: #154734;
-            color: #fff;
-            padding: 15px;
-            font-size: 25px;
-            font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            text-align: center;
-        }
+.message {
+    padding: 8px;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
 
-        .chat-body {
-            padding: 15px;
-            height: 300px;
-            overflow-y: scroll;
-        }
+#input-container {
+    display: flex;
+}
 
-        .message {
-            margin-bottom: 15px;
-        }
-        .student-message {
-            background-color: #ddd;
-            border-radius: 10px;
-            padding: 18px;
-            max-width: 80%;
-            float: left;
-        }
+#message-input {
+    flex-grow: 1;
+    padding: 22px;
+    margin-right: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-        .message-input {
-            width: calc(100% - 5px);
-            padding: 25px;
-            box-sizing: border-box;
-            border-radius: 100px;
-            border-bottom: 2px solid #ccc;
-            background-color: whitesmoke;
-            color: cream;
-        }
-
-        .send-button {
-            width: 100%;
-            padding: 15px;
-            font-size: 20px;
-            font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            background-color: #154734;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
+button {
+    padding: 22px;
+    border: none;
+    border-radius: 5px;
+    background-color: #154734;
+    color: white;
+    cursor: pointer;
+}
     </style>
 </head>
 <body>   
     <a href="website.html"> <img src="logo.png" class="logo"></a>
     <a href="#"><img src="banner.jpg" class="banner"></a>
 <nav><b>
-    <a href="#" class="fa fas fa-home" style="font-size: 25px;"></a>
+    <a href="website.html" class="fa fas fa-home" style="font-size: 25px;"></a>
     <a href="project goals.html">Project Goal and Mission</a>
     <a href="Ask an expert.html">Ask an Expert</a>
     <a href="project team.html">Project Team</a>
@@ -125,49 +112,15 @@ nav a:hover, nav a:active {
     <a href="education.html">Education</a>
     <a href="Events.html">Events</a></b>
 </nav>
-
-<div class="chat-box">
-    <div class="chat-header">Normal Conversations</div>
-    <div class="chat-body" id="chatBody">
-        <!-- Messages will appear here -->
-    </div>
-    <input type="text" class="message-input" id="messageInput" placeholder="Type your message...">
-    <button class="send-button" onclick="sendMessage()">Post</button>
+<div class="heading">
+    <h3>Connect for conversations</h3>
 </div>
-
-<script>
-    function sendMessage() {
-        var messageInput = document.getElementById('messageInput');
-        var chatBody = document.getElementById('chatBody');
-
-        if (messageInput.value.trim() === '') {
-            return;
-        }
-
-        var message = document.createElement('div');
-        message.className = 'message';
-
-        var studentMessage = document.createElement('div');
-        studentMessage.className = 'student-message';
-        studentMessage.textContent = messageInput.value;
-
-        message.appendChild(studentMessage);
-        chatBody.appendChild(message);
-
-        // Simulate expert's response (you can replace this with actual backend communication)
-        setTimeout(function() {
-
-            // Scroll to the bottom of the chat
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }, 500);
-
-        // Clear the input field
-        messageInput.value = '';
-
-        // Scroll to the bottom of the chat
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
-</script> 
-    
+<div id="chat-container">
+    <div id="message-history"></div>
+    <div id="input-container">
+        <input type="text" id="message-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
 </body>
 </html>
