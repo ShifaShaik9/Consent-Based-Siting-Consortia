@@ -3,10 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="website.css">
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>CONSENT-BASED SITING CONSORTIA</title>
+    <style>
+        body {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+}
+
+.logo {
+    width: 156px; 
+    height: 130px; 
+    padding-left: 2%;
+    padding-bottom: 1%;
+   
+}
+.banner{
+    width: 1220px; 
+    height: 150px; 
+    padding-left: 1%;
+    padding-top: 1px;
+}
+
+nav {
+    background-color: #154734;
+    overflow: hidden;
+    text-align: center;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 28px 16px;
+    text-decoration: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 23px;
+}
+
+nav a:hover, nav a:active {
+    background-color: transparent;
+    color: yellow;
+  }
+
+  nav a.active{
+    background-color: transparent;
+    color: yellow;
+  }
+
+
+  .login-container {
+    display: flex;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   }
+   
+   .logo-container {
+    flex: 1;
+    padding-right: 50px;
+   }
+   
+   .logo-container img {
+    width: 90%;
+    height: 300px;
+    padding-left: 150px;
+    padding-top: 90px;
+   }
+   
+   .form-container {
+    padding-top: 70px;
+    padding-left: 400px;
+    flex: 2;
+   }
+   
+   #login-form input {
+    width: 50%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 14px;
+   }
+   
+   #login-form button {
+    width:55%;
+    padding: 10px;
+    background-color: #154734;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+   }
+   h4{
+    text-decoration: none;
+   }
+    </style>
 </head>
 <body>
     <div class="green-background"></div>
@@ -16,7 +111,7 @@
     </div>
     <nav>
         <b>
-            <a href="home.html" class="fa fas fa-home" style="font-size: 25px;"></a>
+            <a href="website.html" class="fa fas fa-home" style="font-size: 25px;"></a>
             <a href="project goals.html">Project Goals and Mission</a>
             <a href="Ask an expert.html">Ask an Expert</a>
             <a href="project team.html">Project Team</a>
@@ -26,28 +121,32 @@
             <a href="Events.html">Events</a>
         </b>
     </nav>
-    <div class="login-container">
-        <div class="login-box">
-          <h2>Admin Login</h2>
-          <form>
-            <label for="username">Username:</label><br>
-            <input type="text" id="username" name="username"><br>
-            <label for="password">Password:</label><br>
-            <input type="password" id="password" name="password"><br><br><br>
-            <input type="submit" value="Login">
-          </form>
+     <div class="login-container">
+        <div class="logo-container">
+          <img src="missourie.jpg" alt="Logo">
         </div>
-        <div class="login-box">
-          <h2>User Login</h2>
-          <form>
-            <label for="admin-username">Username:</label><br>
-            <input type="text" id="admin-username" name="admin-username"><br>
-            <label for="admin-password">Password:</label><br>
-            <input type="password" id="admin-password" name="admin-password"><br><br><br>
-            <input type="submit" value="Login">
-           <h4>Don't have an account ?<a href="usersignup.html">  Create Account</a></h4>
+        <div class="form-container">
+          <form id="login-form">
+            <h1>User Login</h1><br>
+            <input type="text" id="username" placeholder="Username" required><br><br>
+            <input type="password" id="password" placeholder="Password" required><br><br>
+            <button type="submit">Login</button>
+            <h3>Don't have an account? <a href="login.html">Create one.</a></h3>
+            <h4>Are you an admin? <a href="login.html"> Login here.</a></h4>
           </form>
         </div>
      </div>
+     <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+             
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+             
+            // You can use these values to authenticate the user.
+            console.log('Username:', username);
+            console.log('Password:', password);
+           });
+     </script>
 </body>
 </html>
