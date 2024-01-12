@@ -116,6 +116,53 @@ nav a:hover, nav a:active {
             border-radius: 10px;
             cursor: pointer;
         }
+        .container {
+            max-width: 1100px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 50px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #questionSection, #conversationSection {
+            margin-bottom: 20px;
+        }
+        
+        textarea {
+            width: 100%;
+            height: 80px;
+            resize: vertical;
+            margin-bottom: 10px;
+        }
+        
+        button {
+            padding: 10px;
+            border-radius: 20px;
+            background-color: #154734;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #conversation {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        
+        .message {
+            margin-bottom: 10px;
+        }
+        
+        .message span {
+            font-weight: bold;
+            color: #333;
+        }     
 
     </style>
 </head>
@@ -123,7 +170,7 @@ nav a:hover, nav a:active {
     <a href="website.html"> <img src="logo.png" class="logo"></a>
     <a href="#"><img src="banner.jpg" class="banner"></a>
 <nav><b>
-    <a href="#" class="fa fas fa-home" style="font-size: 25px;"></a>
+    <a href="website.html" class="fa fas fa-home" style="font-size: 25px;"></a>
     <a href="project goals.html">Project Goal and Mission</a>
     <a href="Ask an expert.html" class="active">Ask an Expert</a>
     <a href="project team.html">Project Team</a>
@@ -132,57 +179,58 @@ nav a:hover, nav a:active {
     <a href="education.html">Education</a>
     <a href="Events.html">Events</a></b>
 </nav>
-
-<div class="chat-box">
-    <div class="chat-header">Expert-Student Chat</div>
-    <div class="chat-body" id="chatBody">
-        <!-- Messages will appear here -->
+<div class="container">
+    <div id="questionSection">
+        <h2>Ask a question to an expert</h2>
+        <textarea id="questionInput" placeholder="Type your question..."></textarea>
+        <button onclick="askQuestion()">Submit Question</button>
     </div>
-    <input type="text" class="message-input" id="messageInput" placeholder="Type your message...">
-    <button class="send-button" onclick="sendMessage()">Post</button>
+    <div id="conversationSection">
+        <h2>Students Questions</h2>
+        <div id="conversation"></div>
+    </div>
 </div>
 
 <script>
-    function sendMessage() {
-        var messageInput = document.getElementById('messageInput');
-        var chatBody = document.getElementById('chatBody');
-
-        if (messageInput.value.trim() === '') {
-            return;
-        }
-
-        var message = document.createElement('div');
-        message.className = 'message';
-
-        var studentMessage = document.createElement('div');
-        studentMessage.className = 'student-message';
-        studentMessage.textContent = messageInput.value;
-
-        message.appendChild(studentMessage);
-        chatBody.appendChild(message);
-
-        // Simulate expert's response (you can replace this with actual backend communication)
-        setTimeout(function() {
-            var expertMessage = document.createElement('div');
-            expertMessage.className = 'message';
-
-            var expertResponse = document.createElement('div');
-            expertResponse.className = 'expert-message';
-            expertResponse.textContent = 'Thank you for your question. Here is the expert\'s response.';
-
-            expertMessage.appendChild(expertResponse);
-            chatBody.appendChild(expertMessage);
-
-            // Scroll to the bottom of the chat
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }, 500);
-
-        // Clear the input field
-        messageInput.value = '';
-
-        // Scroll to the bottom of the chat
-        chatBody.scrollTop = chatBody.scrollHeight;
+    const conversationDiv = document.getElementById('conversation');
+    const questionInput = document.getElementById('questionInput');
+  
+    function askQuestion() {
+      const question = questionInput.value.trim();
+  
+      if (question !== '') {
+        const username = 'Student'; // Assuming all questions come from students
+        const timestamp = getFormattedTimestamp();
+  
+        appendMessage(username, question, timestamp);
+  
+        // You can add logic here to handle expert's response (not included in this example)
+  
+        questionInput.value = ''; // Clear the input field
+      }
     }
-</script> 
+  
+    function appendMessage(username, message, timestamp) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message');
+      messageDiv.innerHTML = `<span>${username}</span>: ${message} <small>${timestamp}</small>`;
+      conversationDiv.appendChild(messageDiv);
+  
+      // Scroll to the bottom to show the latest message
+      conversationDiv.scrollTop = conversationDiv.scrollHeight;
+    }
+  
+    function getFormattedTimestamp() {
+      const currentDate = new Date();
+      const hours = currentDate.getHours() % 12 || 12; // Convert to 12-hour format
+      const minutes = currentDate.getMinutes();
+      const ampm = currentDate.getHours() < 12 ? 'AM' : 'PM';
+      const formattedDate = currentDate.toLocaleDateString();
+      const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+  
+      return `${formattedDate} ${formattedTime}`;
+    }
+  </script>
+  
 </body>
 </html>
